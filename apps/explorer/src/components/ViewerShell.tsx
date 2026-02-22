@@ -15,10 +15,10 @@ const PANEL_IDS = ['lotDetails', 'streetTour', 'amenities'] as const;
 
 export function ViewerShell() {
   useReduceMotionSync();
-  useManifestLoader(communityId);
-  const adapterRef = useRef<ViewerAdapter | null>(null);
   const { communityId, phaseId, lotId, activePanel, setActivePanel, reduceMotion } =
     useExplorerStore();
+  useManifestLoader(communityId);
+  const adapterRef = useRef<ViewerAdapter | null>(null);
 
   const sceneId = phaseId ? `phase-${phaseId}` : null;
 

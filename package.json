@@ -2,7 +2,7 @@
   "name": "community-explorer",
   "version": "0.1.0",
   "private": true,
-  "description": "Bryto Community Explorer — manifest-driven modular 3D neighborhood viewer + asset backoffice",
+  "description": " Community Explorer — manifest-driven modular 3D neighborhood viewer + asset backoffice",
   "scripts": {
     "dev": "pnpm -r --parallel run dev",
     "dev:explorer": "pnpm --filter explorer run dev",

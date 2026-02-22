@@ -1,6 +1,6 @@
-# Community Explorer — Bryto Portfolio Project
+# Community Explorer — Portfolio Project
 
-A manifest-driven modular 3D neighborhood viewer with asset backoffice, built for Bryto’s “on-demand Google Street View publishing” and next-gen home buying experience.
+A manifest-driven modular 3D neighborhood viewer with asset backoffice, built for ’s “on-demand Google Street View publishing” and next-gen home buying experience.
 
 ## Overview
 
