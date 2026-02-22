@@ -79,7 +79,7 @@ export function PlatMapOverlay({ onLotClick, className = '' }: PlatMapOverlayPro
           const offsetY = 25 + Math.floor(i / 3) * 45;
           const points = coords
             .slice(0, 4)
-            .map(([x, y], j) => {
+            .map((_, j) => {
               const px = offsetX + Math.cos((j / 4) * Math.PI * 2) * scale;
               const py = offsetY + Math.sin((j / 4) * Math.PI * 2) * scale;
               return `${px},${py}`;

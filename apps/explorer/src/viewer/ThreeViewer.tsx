@@ -12,7 +12,7 @@ interface ThreeViewerBridgeProps {
   reduceMotion: boolean;
 }
 
-function ThreeViewerBridge({ adapterRef, sceneId, lotId, reduceMotion }: ThreeViewerBridgeProps) {
+function ThreeViewerBridge({ adapterRef, sceneId: _sceneId, lotId: _lotId, reduceMotion }: ThreeViewerBridgeProps) {
   const { camera } = useThree();
 
   const setCamera = useCallback(
