@@ -1,4 +1,4 @@
-import type { PanoNode, PanoNodeId } from '@community-explorer/shared';
+import type { PanoNode } from '@community-explorer/shared';
 import { Button } from '@/components/ui';
 
 export interface PanoWalkNavProps {

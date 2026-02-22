@@ -1,9 +1,10 @@
 import { useExplorerStore } from '@/store/explorer-store';
 import { useManifest } from '@/hooks/useManifest';
 import { Card, CardHeader } from '@/components/ui';
+import { Button } from '@/components/ui';
 
 export function StreetTourPanel() {
-  const { communityId, phaseId, lotId } = useExplorerStore();
+  const { communityId, phaseId, lotId, activePanoNodeId, setActivePanoNode } = useExplorerStore();
   const manifestState = useManifest(communityId);
 
   if (!communityId || !phaseId || !lotId) {
@@ -20,7 +21,9 @@ export function StreetTourPanel() {
   const lot = phase?.lots?.find((l) => l.id === lotId);
 
   if (!lot) return null;
-  const panoNodes = lot.panoNodeIds ?? [];
+
+  const panoIds = lot.panoNodeIds ?? [];
+  const panoNodes = (manifestState.data.panoNodes ?? []).filter((n) => panoIds.includes(n.id));
 
   return (
     <div className="p-4">
@@ -33,10 +36,25 @@ export function StreetTourPanel() {
           <p className="text-sm text-slate-600">No panorama nodes available yet.</p>
         ) : (
           <ul className="space-y-2 text-sm">
-            {panoNodes.map((id) => (
-              <li key={id} className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-sky-500" aria-hidden />
-                Node {id}
+            {panoNodes.map((node) => (
+              <li key={node.id} className="flex items-center justify-between gap-2">
+                <span className="flex items-center gap-2">
+                  <span
+                    className={`h-2 w-2 rounded-full ${
+                      activePanoNodeId === node.id ? 'bg-sky-600' : 'bg-slate-300'
+                    }`}
+                    aria-hidden
+                  />
+                  Node {node.id}
+                </span>
+                <Button
+                  variant={activePanoNodeId === node.id ? 'primary' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActivePanoNode(node.id)}
+                  aria-pressed={activePanoNodeId === node.id}
+                >
+                  {activePanoNodeId === node.id ? 'Viewing' : 'View'}
+                </Button>
               </li>
             ))}
           </ul>
