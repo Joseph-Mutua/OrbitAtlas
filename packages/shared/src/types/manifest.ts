@@ -8,6 +8,20 @@ export type PhaseId = string;
 export type LotId = string;
 export type SceneId = string;
 export type AssetId = string;
+export type PanoNodeId = string;
+
+/** Street View–style panorama node: position, 360° image, and connections. */
+export interface PanoNode {
+  id: PanoNodeId;
+  /** World position [x, y, z] or [lon, lat, alt] if geo. */
+  position: [number, number, number];
+  /** URL to equirectangular 360° image (2:1 aspect, e.g. 4096×2048). */
+  url: string;
+  /** IDs of connected nodes for walk navigation. */
+  neighbors?: PanoNodeId[];
+  /** Optional lot association. */
+  lotId?: LotId;
+}
 
 export interface AssetRef {
   id: AssetId;
@@ -58,6 +72,8 @@ export interface CommunityManifest {
   communityId: CommunityId;
   communityName: string;
   updatedAt: string; // ISO 8601
+  /** Street View–style panorama nodes for walk-through tours. */
+  panoNodes?: PanoNode[];
   scenes: {
     id: SceneId;
     phaseId: PhaseId;
