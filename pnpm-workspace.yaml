@@ -1,0 +1,5 @@
+packages:
+  - "apps/explorer"
+  - "apps/backoffice"
+  - "packages/shared"
+  - "packages/api"

@@ -1,0 +1,23 @@
+{
+  "name": "community-explorer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bryto Community Explorer — manifest-driven modular 3D neighborhood viewer + asset backoffice",
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "dev:explorer": "pnpm --filter explorer run dev",
+    "dev:backoffice": "pnpm --filter backoffice run dev",
+    "dev:api": "pnpm --filter api run dev",
+    "build": "pnpm -r run build",
+    "build:explorer": "pnpm --filter explorer run build",
+    "build:backoffice": "pnpm --filter backoffice run build",
+    "build:api": "pnpm --filter api run build",
+    "lint": "pnpm -r run lint",
+    "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.0.0"
+}
