@@ -3,7 +3,11 @@
  * Handles loading, error, and stale-response scenarios.
  */
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? "/api";
+const rawBase = import.meta.env.VITE_API_BASE ?? "/api";
+const API_BASE =
+  rawBase.startsWith("http") && !rawBase.endsWith("/api")
+    ? `${rawBase.replace(/\/$/, "")}/api`
+    : rawBase;
 
 
 export class ApiError extends Error {
