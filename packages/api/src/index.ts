@@ -6,7 +6,7 @@ import { assetsRouter } from './routes/assets.js';
 import { publishRouter } from './routes/publish.js';
 
 const app = express();
-const PORT = 4000;
+const PORT = Number(process.env.PORT) || 4000;
 
 app.use(cors());
 app.use(express.json());
@@ -23,5 +23,5 @@ app.use('/api/publish', publishRouter);
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
 app.listen(PORT, () => {
-  console.log(`API running at http://localhost:${PORT}`);
+  console.log(`API running on port ${PORT}`);
 });
