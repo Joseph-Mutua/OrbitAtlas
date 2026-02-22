@@ -31,8 +31,12 @@ function PanoramaControls() {
       enablePan={false}
       enableZoom={false}
       enableRotate={true}
+      rotateSpeed={0.4}
+      enableDamping
+      dampingFactor={0.08}
+      minPolarAngle={0}
+      maxPolarAngle={Math.PI}
       target={[0, 0, -1]}
-      rotateSpeed={0.3}
     />
   );
 }
