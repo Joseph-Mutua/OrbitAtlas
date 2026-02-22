@@ -90,21 +90,21 @@ export const MOCK_MANIFESTS: Record<string, CommunityManifest> = {
       {
         id: 'pano-1-1',
         position: [0, 0, 0],
-        url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg',
+        url: 'https://pannellum.org/images/alma.jpg',
         neighbors: ['pano-1-2'],
         lotId: 'lot-1-1',
       },
       {
         id: 'pano-1-2',
         position: [10, 0, 5],
-        url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg',
+        url: 'https://pannellum.org/images/alma.jpg',
         neighbors: ['pano-1-1', 'pano-1-3'],
         lotId: 'lot-1-1',
       },
       {
         id: 'pano-1-3',
         position: [20, 0, 5],
-        url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg',
+        url: 'https://pannellum.org/images/alma.jpg',
         neighbors: ['pano-1-2'],
         lotId: 'lot-1-2',
       },
@@ -142,8 +142,8 @@ export const MOCK_MANIFESTS: Record<string, CommunityManifest> = {
       },
     ],
     panoNodes: [
-      { id: 'pano-s1', position: [0, 0, 0], url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg', neighbors: ['pano-s2'], lotId: 'lot-1' },
-      { id: 'pano-s2', position: [8, 0, 4], url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg', neighbors: ['pano-s1'], lotId: 'lot-2' },
+      { id: 'pano-s1', position: [0, 0, 0], url: 'https://pannellum.org/images/alma.jpg', neighbors: ['pano-s2'], lotId: 'lot-1' },
+      { id: 'pano-s2', position: [8, 0, 4], url: 'https://pannellum.org/images/alma.jpg', neighbors: ['pano-s1'], lotId: 'lot-2' },
     ],
     scenes: [
       {
