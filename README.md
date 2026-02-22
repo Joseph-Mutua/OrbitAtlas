@@ -1,6 +1,8 @@
-# Community Explorer — Portfolio Project
+# OrbitAtlas Community Explorer
 
 A manifest-driven modular 3D neighborhood viewer with asset backoffice, built for ’s “on-demand Google Street View publishing” and next-gen home buying experience.
+
+![Community Explorer](apps/explorer/public/assets/community-explorer.png)
 
 ## Overview
 
