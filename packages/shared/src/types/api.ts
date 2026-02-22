@@ -2,7 +2,7 @@
  * REST API contracts
  */
 
-import type { CommunityManifest } from './manifest';
+import type { CommunityManifest } from './manifest.js';
 
 export interface Community {
   id: string;

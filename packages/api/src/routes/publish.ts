@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-export const publishRouter = Router();
+export const publishRouter: ReturnType<typeof Router> = Router();
 
 publishRouter.post('/:communityId', (req, res) => {
   const { communityId } = req.params;

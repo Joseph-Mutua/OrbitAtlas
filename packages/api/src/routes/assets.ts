@@ -32,7 +32,7 @@ const upload = multer({
   },
 });
 
-export const assetsRouter = Router();
+export const assetsRouter: ReturnType<typeof Router> = Router();
 
 assetsRouter.post('/', upload.single('asset'), (req, res) => {
   const file = req.file;

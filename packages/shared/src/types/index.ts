@@ -1,2 +1,2 @@
-export * from './manifest';
-export * from './api';
+export * from './manifest.js';
+export * from './api.js';

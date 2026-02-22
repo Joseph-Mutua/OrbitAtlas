@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { MOCK_COMMUNITIES, MOCK_MANIFESTS } from '../data/mock.js';
 
-export const communitiesRouter = Router();
+export const communitiesRouter: ReturnType<typeof Router> = Router();
 
 communitiesRouter.get('/', (_req, res) => {
   res.json({ communities: MOCK_COMMUNITIES });
