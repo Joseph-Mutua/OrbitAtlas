@@ -40,6 +40,7 @@ export const MOCK_MANIFESTS: Record<string, CommunityManifest> = {
             sqft: 2200,
             price: 385000,
             status: 'available',
+            panoNodeIds: ['pano-1-1', 'pano-1-2'],
             boundary: {
               type: 'Polygon',
               coordinates: [
@@ -59,6 +60,7 @@ export const MOCK_MANIFESTS: Record<string, CommunityManifest> = {
             sqft: 2400,
             price: 410000,
             status: 'available',
+            panoNodeIds: ['pano-1-2', 'pano-1-3'],
             boundary: {
               type: 'Polygon',
               coordinates: [
@@ -82,6 +84,29 @@ export const MOCK_MANIFESTS: Record<string, CommunityManifest> = {
           { id: 'lot-2-1', address: '200 Pleasant Grove Dr', sqft: 2300, price: 395000, status: 'available' },
           { id: 'lot-2-2', address: '202 Pleasant Grove Dr', sqft: 2500, price: 430000, status: 'reserved' },
         ],
+      },
+    ],
+    panoNodes: [
+      {
+        id: 'pano-1-1',
+        position: [0, 0, 0],
+        url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg',
+        neighbors: ['pano-1-2'],
+        lotId: 'lot-1-1',
+      },
+      {
+        id: 'pano-1-2',
+        position: [10, 0, 5],
+        url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg',
+        neighbors: ['pano-1-1', 'pano-1-3'],
+        lotId: 'lot-1-1',
+      },
+      {
+        id: 'pano-1-3',
+        position: [20, 0, 5],
+        url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg',
+        neighbors: ['pano-1-2'],
+        lotId: 'lot-1-2',
       },
     ],
     scenes: [
@@ -111,10 +136,14 @@ export const MOCK_MANIFESTS: Record<string, CommunityManifest> = {
         id: 'phase-1',
         name: 'Phase 1',
         lots: [
-          { id: 'lot-1', address: '10 Sunset Blvd', sqft: 2000, price: 350000, status: 'available' },
-          { id: 'lot-2', address: '12 Sunset Blvd', sqft: 2200, price: 375000, status: 'available' },
+          { id: 'lot-1', address: '10 Sunset Blvd', sqft: 2000, price: 350000, status: 'available', panoNodeIds: ['pano-s1'] },
+          { id: 'lot-2', address: '12 Sunset Blvd', sqft: 2200, price: 375000, status: 'available', panoNodeIds: ['pano-s1', 'pano-s2'] },
         ],
       },
+    ],
+    panoNodes: [
+      { id: 'pano-s1', position: [0, 0, 0], url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg', neighbors: ['pano-s2'], lotId: 'lot-1' },
+      { id: 'pano-s2', position: [8, 0, 4], url: 'https://threejs.org/examples/textures/equirectangular/venice_sunset_1k.jpg', neighbors: ['pano-s1'], lotId: 'lot-2' },
     ],
     scenes: [
       {
