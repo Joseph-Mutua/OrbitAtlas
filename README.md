@@ -2,7 +2,7 @@
 
 A manifest-driven modular 3D neighborhood viewer with asset backoffice, built for on-demand Google Street View–style publishing and next-gen home buying.
 
-![Community Explorer](apps/explorer/public/assets/community-explorer.png)
+![Community Explorer](apps/explorer/public/assets/Community%20Explorer.png)
 
 ## Live demos
 
