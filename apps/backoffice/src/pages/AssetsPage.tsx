@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_BASE } from '@/api/config';
 
 export function AssetsPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -15,7 +16,7 @@ export function AssetsPage() {
     formData.append('asset', file);
 
     try {
-      const res = await fetch('/api/assets', {
+      const res = await fetch(`${API_BASE}/assets`, {
         method: 'POST',
         body: formData,
       });

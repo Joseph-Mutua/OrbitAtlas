@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { API_BASE } from '@/api/config';
 
 interface Community {
   id: string;
@@ -13,7 +14,7 @@ export function CommunitiesPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/communities')
+    fetch(`${API_BASE}/communities`)
       .then((r) => r.json())
       .then((data) => {
         setCommunities(data.communities ?? []);
